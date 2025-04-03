@@ -1,0 +1,255 @@
+{
+	"info": {
+		"_postman_id": "bc335a7d-efe7-474e-9e0a-e9f229739d94",
+		"name": "URL-Shortener",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "createShortURL",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"user\": \"johannes.ilisei@accenture.com\",\r\n    \"originalUrl\": \"https://commons.apache.org/proper/commons-text/javadocs/api-release/org/apache/commons/text/RandomStringGenerator.html\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/createshorturl",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"createshorturl"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createShortURL-2",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"user\": \"oliver.mau@accenture.com\",\r\n    \"originalUrl\": \"https://stackoverflow.com/questions/17955777/redirect-to-an-external-url-from-controller-action-in-spring-mvc\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/createshorturl",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"createshorturl"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "listURLs",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"user\": \"oliver.mau@accenture.com\",\r\n    \"originalUrl\": \"https://stackoverflow.com/questions/17955777/redirect-to-an-external-url-from-controller-action-in-spring-mvc\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/urls?user=johannes.ilisei@accenture.com",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"urls"
+					],
+					"query": [
+						{
+							"key": "user",
+							"value": "johannes.ilisei@accenture.com"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getURLByIdUser",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"user\": \"oliver.mau@accenture.com\",\r\n    \"originalUrl\": \"https://stackoverflow.com/questions/17955777/redirect-to-an-external-url-from-controller-action-in-spring-mvc\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/url?user=johannes.ilisei@accenture.com&id=VDR4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"url"
+					],
+					"query": [
+						{
+							"key": "user",
+							"value": "johannes.ilisei@accenture.com"
+						},
+						{
+							"key": "id",
+							"value": "VDR4"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getURLById",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"user\": \"oliver.mau@accenture.com\",\r\n    \"originalUrl\": \"https://stackoverflow.com/questions/17955777/redirect-to-an-external-url-from-controller-action-in-spring-mvc\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/url?id=VDR4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"url"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "VDR4"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteURL",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"user\": \"oliver.mau@accenture.com\",\r\n    \"originalUrl\": \"https://stackoverflow.com/questions/17955777/redirect-to-an-external-url-from-controller-action-in-spring-mvc\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/url?id=VDR4&user=johannes.ilisei@accenture.com",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"url"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "VDR4"
+						},
+						{
+							"key": "user",
+							"value": "johannes.ilisei@accenture.com"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getStatistic",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"user\": \"oliver.mau@accenture.com\",\r\n    \"originalUrl\": \"https://stackoverflow.com/questions/17955777/redirect-to-an-external-url-from-controller-action-in-spring-mvc\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/statistic?id=VDR4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"statistic"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "VDR4"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
